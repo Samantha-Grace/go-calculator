@@ -8,7 +8,7 @@ import (
 func main() {
 	fmt.Println("Go calculator!!!")
 	cmd := readLine("Enter command: [a]dd, [s]ubtract, [m]ultiply, [d]ivide, [u]pdate: ")
-	var register int
+	//var register int
 	num1, err := readIntFromUser("Enter number:")
 	if err != nil {
 		panic(err)
