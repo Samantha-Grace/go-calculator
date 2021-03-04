@@ -6,31 +6,40 @@ import (
 )
 
 func main() {
-	fmt.Println("Go calculator!!!")
-	cmd := readLine("Enter command: [a]dd, [s]ubtract, [m]ultiply, [d]ivide, [u]pdate: ")
+	fmt.Println("Go calculator!")
+	for {
+		cmd := readLine("Enter command: [a]dd, [s]ubtract, [m]ultiply, [d]ivide, [u]pdate: ")
 
-	num1, err := readIntFromUser("Enter number:")
-	if err != nil {
-		panic(err)
-	}
-	num2, err := readIntFromUser("Enter second number:")
-	if err != nil {
-		panic(err)
-	}
-	if cmd == "a" {
-		answer := num2 + num1
-		fmt.Printf("answer %v", answer)
-	} else if cmd == "s" {
-		answer := num2 - num1
-		fmt.Printf("answer %v", answer)
-	} else if cmd == "m" {
-		answer := num2 * num1
-		fmt.Printf("answer %v", answer)
-	} else if cmd == "d" {
-		answer := num2 / num1
-		fmt.Printf("answer %v", answer)
-	} else {
-		fmt.Printf("unknown command %q received", cmd)
+		num1, err := readIntFromUser("Enter number:")
+		if err != nil {
+			panic(err)
+		}
+		num2, err := readIntFromUser("Enter second number:")
+		if err != nil {
+			panic(err)
+		}
+
+		if cmd == "a" {
+			answer := num2 + num1
+			fmt.Printf("answer %v\n", answer)
+
+		} else if cmd == "s" {
+			answer := num2 - num1
+
+			fmt.Printf("answer %v\n", answer)
+
+		} else if cmd == "m" {
+			answer := num2 * num1
+			fmt.Printf("answer %v\n", answer)
+		} else if cmd == "d" {
+			answer := num2 / num1
+			fmt.Printf("answer %v\n", answer)
+			if num2 == 0 {
+				panic("you can not divide to 0")
+			}
+		} else {
+			fmt.Printf("unknown command %q received", cmd)
+		}
 	}
 }
 
