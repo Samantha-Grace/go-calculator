@@ -18,24 +18,19 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
+		var answer int
 		if cmd == "a" {
-			answer := num2 + num1
-			fmt.Printf("answer %v\n", answer)
+			answer = num2 + num1
 		} else if cmd == "s" {
-			answer := num2 - num1
-			fmt.Printf("answer %v\n", answer)
+			answer = num2 - num1
 		} else if cmd == "m" {
-			answer := num2 * num1
-			fmt.Printf("answer %v\n", answer)
+			answer = num2 * num1
 		} else if cmd == "d" {
-			answer := num2 / num1
-			fmt.Printf("answer %v\n", answer)
-			if num2 == 0 {
-				panic("you can not divide to 0")
-			}
+			answer = num2 / num1
 		} else {
 			fmt.Printf("unknown command %q received", cmd)
 		}
+		fmt.Printf("answer %v\n", answer)
 	}
 }
 
