@@ -18,16 +18,12 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-
 		if cmd == "a" {
 			answer := num2 + num1
 			fmt.Printf("answer %v\n", answer)
-
 		} else if cmd == "s" {
 			answer := num2 - num1
-
 			fmt.Printf("answer %v\n", answer)
-
 		} else if cmd == "m" {
 			answer := num2 * num1
 			fmt.Printf("answer %v\n", answer)
